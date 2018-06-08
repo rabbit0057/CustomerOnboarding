@@ -16,7 +16,7 @@ public class CustomerService {
 
 	//Create 
 
-	public Customer create(String firstName,String lastName,int mobileNumber,String location) {
+	public Customer create(String firstName,String lastName,long mobileNumber,String location) {
 		return customerRespository.save(new Customer(firstName,lastName,mobileNumber,location));
 	}
 
@@ -31,7 +31,7 @@ public class CustomerService {
 
 	//Update opertion
 
-	public Customer Update(String firstName,String lastName,int mobileNumber, String location) {
+	public Customer Update(String firstName,String lastName,long mobileNumber, String location) {
 		Customer c = customerRespository.findByFirstName(firstName);
 		c.setLastName(lastName);
 		c.setMobileNumber(mobileNumber);

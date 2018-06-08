@@ -17,7 +17,7 @@ public class CustomerController {
 	private CustomerService customerService;
 
 	@RequestMapping("/create")
-	public String create(@RequestParam String firstName,@RequestParam String lastName, @RequestParam int mobileNumber, @RequestParam String location) {
+	public String create(@RequestParam String firstName,@RequestParam String lastName, @RequestParam long mobileNumber, @RequestParam String location) {
 		Customer c = customerService.create(firstName, lastName, mobileNumber, location);
 		return c.toString();
 	}
@@ -26,7 +26,7 @@ public class CustomerController {
 		return customerService.getAll();
 	}
 	@RequestMapping("/Update")
-	public String update(@RequestParam String firstName,@RequestParam String lastName, @RequestParam int mobileNumber, @RequestParam String location ) {
+	public String update(@RequestParam String firstName,@RequestParam String lastName, @RequestParam long mobileNumber, @RequestParam String location ) {
 		Customer c = customerService.Update(firstName, lastName, mobileNumber, location);
 		return c.toString();
 	}
