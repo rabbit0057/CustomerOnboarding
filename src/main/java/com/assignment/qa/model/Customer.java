@@ -9,10 +9,10 @@ public class Customer {
 	String id;
 	String firstName;
 	String lastName;
-	int mobileNumber;
+	long mobileNumber;
 	String location;
 
-	public  Customer(String firstName,String lastName,int mobileNumber,String location) {
+	public  Customer(String firstName,String lastName,long mobileNumber,String location) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.mobileNumber = mobileNumber;
@@ -44,7 +44,7 @@ public class Customer {
 		this.lastName = lastName;
 	}
 
-	public int getMobileNumber() {
+	public long getMobileNumber() {
 		return mobileNumber;
 	}
 
