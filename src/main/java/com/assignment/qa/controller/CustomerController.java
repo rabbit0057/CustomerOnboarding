@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-
 import com.assignment.qa.model.Customer;
 import com.assignment.qa.service.CustomerService;
 
@@ -23,33 +22,33 @@ public class CustomerController implements ErrorController {
 		//do something like logging
 		return "404 PAGE NOT FOUND";
 	}
-	@RequestMapping("/")
+	@RequestMapping("/")	
 	public String welcome() {
 		//do something like logging
 		return "WELCOME TO CUSTOMER ONBOARDING ";
 	}
-	
-	
-	@RequestMapping("/create")
+	        
+	@RequestMapping(value = "/newCustomer")
 	public String create(@RequestParam String firstName,@RequestParam String lastName, @RequestParam long mobileNumber, @RequestParam String location) {
 		Customer c = customerService.create(firstName, lastName, mobileNumber, location);
 		return c.toString();
+		
 	}
-	@RequestMapping("/getAll")
+	@RequestMapping("/getAllCustomer")
 	public List<Customer>getAll(){
 		return customerService.getAll();
 	}
-	@RequestMapping("/Update")
+	@RequestMapping("/UpdateCustomer")
 	public String update(@RequestParam String firstName,@RequestParam String lastName, @RequestParam long mobileNumber, @RequestParam String location ) {
 		Customer c = customerService.Update(firstName, lastName, mobileNumber, location);
 		return c.toString();
 	}
-	@RequestMapping("/delete")
+	@RequestMapping("/deleteCustomer")
 	public String delete(@RequestParam String firstName) {
 		customerService.delete(firstName);
 		return "Deleted "+firstName;
 	}
-	@RequestMapping("/deleteAll")
+	@RequestMapping("/deleteAllCustomer")
 	public String deleteAll() {
 		customerService.deleteAll();
 		return "Deleted All records";
