@@ -35,6 +35,13 @@ public class CustomerController implements ErrorController {
 		return c.toString();
 		
 	}
+	// ********************* Show Customer data My FirstName **********************  
+	
+	@RequestMapping(value="/getCustomer")
+	public Customer getCustomer(@RequestParam String firstName) {
+		return customerService.getByFirstName(firstName);
+	}
+	
 	// ********************* Show all Customer **********************        
 	@RequestMapping("/getAllCustomer")
 	public List<Customer>getAll(){
