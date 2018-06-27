@@ -7,6 +7,8 @@ clone the project
 
 From terminal run the command
 ----> mvn spring-boot:run
+
+
 Spring application will start localhost:8080
 
 Test Scenarios
